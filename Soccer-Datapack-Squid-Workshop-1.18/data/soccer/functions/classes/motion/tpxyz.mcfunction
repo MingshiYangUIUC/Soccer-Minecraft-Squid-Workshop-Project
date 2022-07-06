@@ -2,8 +2,15 @@ scoreboard players operation xtp swSocc_V = @s swSocc_vx
 scoreboard players operation ytp swSocc_V = @s swSocc_vy
 scoreboard players operation ztp swSocc_V = @s swSocc_vz
 
-### positive
+scoreboard players operation xtp swSocc_V /= C_2 swSocc_C
+scoreboard players operation ytp swSocc_V /= C_2 swSocc_C
+scoreboard players operation ztp swSocc_V /= C_2 swSocc_C
 
+### positive
+execute if score ztp swSocc_V matches 200000..399999 at @s run tp @s ~ ~ ~2
+execute if score ztp swSocc_V matches 200000..399999 run scoreboard players remove ztp swSocc_V 200000
+execute if score ztp swSocc_V matches 100000..199999 at @s run tp @s ~ ~ ~1
+execute if score ztp swSocc_V matches 100000..199999 run scoreboard players remove ztp swSocc_V 100000
 execute if score ztp swSocc_V matches 50000..99999 at @s run tp @s ~ ~ ~0.5
 execute if score ztp swSocc_V matches 50000..99999 run scoreboard players remove ztp swSocc_V 50000
 execute if score ztp swSocc_V matches 25000..50000 at @s run tp @s ~ ~ ~0.25
@@ -25,7 +32,10 @@ execute if score ztp swSocc_V matches 195..389 run scoreboard players remove ztp
 execute if score ztp swSocc_V matches 97..194 at @s run tp @s ~ ~ ~0.00097656
 execute if score ztp swSocc_V matches 97..194 run scoreboard players remove ztp swSocc_V 97
 
-
+execute if score xtp swSocc_V matches 200000..399999 at @s run tp @s ~2 ~ ~
+execute if score xtp swSocc_V matches 200000..399999 run scoreboard players remove xtp swSocc_V 200000
+execute if score xtp swSocc_V matches 100000..199999 at @s run tp @s ~1 ~ ~
+execute if score xtp swSocc_V matches 100000..199999 run scoreboard players remove xtp swSocc_V 100000
 execute if score xtp swSocc_V matches 50000..99999 at @s run tp @s ~0.5 ~ ~
 execute if score xtp swSocc_V matches 50000..99999 run scoreboard players remove xtp swSocc_V 50000
 execute if score xtp swSocc_V matches 25000..50000 at @s run tp @s ~0.25 ~ ~
@@ -47,6 +57,10 @@ execute if score xtp swSocc_V matches 195..389 run scoreboard players remove xtp
 execute if score xtp swSocc_V matches 97..194 at @s run tp @s ~0.00097656 ~ ~
 execute if score xtp swSocc_V matches 97..194 run scoreboard players remove xtp swSocc_V 97
 
+execute if score ytp swSocc_V matches 200000..399999 at @s run tp @s ~ ~2 ~
+execute if score ytp swSocc_V matches 200000..399999 run scoreboard players remove ytp swSocc_V 200000
+execute if score ytp swSocc_V matches 100000..199999 at @s run tp @s ~ ~1 ~
+execute if score ytp swSocc_V matches 100000..199999 run scoreboard players remove ytp swSocc_V 100000
 execute if score ytp swSocc_V matches 50000..99999 at @s run tp @s ~ ~0.5 ~
 execute if score ytp swSocc_V matches 50000..99999 run scoreboard players remove ytp swSocc_V 50000
 execute if score ytp swSocc_V matches 25000..50000 at @s run tp @s ~ ~0.25 ~
@@ -69,7 +83,10 @@ execute if score ytp swSocc_V matches 97..194 at @s run tp @s ~ ~0.00097656 ~
 execute if score ytp swSocc_V matches 97..194 run scoreboard players remove ytp swSocc_V 97
 
 ### negative
-
+execute if score ztp swSocc_V matches -399999..-200000 at @s run tp @s ~ ~ ~-2
+execute if score ztp swSocc_V matches -399999..-200000 run scoreboard players add ztp swSocc_V 200000
+execute if score ztp swSocc_V matches -199999..-100000 at @s run tp @s ~ ~ ~-1
+execute if score ztp swSocc_V matches -199999..-100000 run scoreboard players add ztp swSocc_V 100000
 execute if score ztp swSocc_V matches -99999..-50000 at @s run tp @s ~ ~ ~-0.5
 execute if score ztp swSocc_V matches -99999..-50000 run scoreboard players add ztp swSocc_V 50000
 execute if score ztp swSocc_V matches -50000..-25000 at @s run tp @s ~ ~ ~-0.25
@@ -91,7 +108,10 @@ execute if score ztp swSocc_V matches -389..-195 run scoreboard players add ztp 
 execute if score ztp swSocc_V matches -194..-97 at @s run tp @s ~ ~ ~-0.00097656
 execute if score ztp swSocc_V matches -194..-97 run scoreboard players add ztp swSocc_V 97
 
-
+execute if score xtp swSocc_V matches -399999..-200000 at @s run tp @s ~-2 ~ ~
+execute if score xtp swSocc_V matches -399999..-200000 run scoreboard players add xtp swSocc_V 200000
+execute if score xtp swSocc_V matches -199999..-100000 at @s run tp @s ~-1 ~ ~
+execute if score xtp swSocc_V matches -199999..-100000 run scoreboard players add xtp swSocc_V 100000
 execute if score xtp swSocc_V matches -99999..-50000 at @s run tp @s ~-0.5 ~ ~
 execute if score xtp swSocc_V matches -99999..-50000 run scoreboard players add xtp swSocc_V 50000
 execute if score xtp swSocc_V matches -50000..-25000 at @s run tp @s ~-0.25 ~ ~
@@ -113,6 +133,10 @@ execute if score xtp swSocc_V matches -389..-195 run scoreboard players add xtp 
 execute if score xtp swSocc_V matches -194..-97 at @s run tp @s ~-0.00097656 ~ ~
 execute if score xtp swSocc_V matches -194..-97 run scoreboard players add xtp swSocc_V 97
 
+execute if score ytp swSocc_V matches -399999..-200000 at @s run tp @s ~ ~-2 ~
+execute if score ytp swSocc_V matches -399999..-200000 run scoreboard players add ytp swSocc_V 200000
+execute if score ytp swSocc_V matches -199999..-100000 at @s run tp @s ~ ~-1 ~
+execute if score ytp swSocc_V matches -199999..-100000 run scoreboard players add ytp swSocc_V 100000
 execute if score ytp swSocc_V matches -99999..-50000 at @s run tp @s ~ ~-0.5 ~
 execute if score ytp swSocc_V matches -99999..-50000 run scoreboard players add ytp swSocc_V 50000
 execute if score ytp swSocc_V matches -50000..-25000 at @s run tp @s ~ ~-0.25 ~

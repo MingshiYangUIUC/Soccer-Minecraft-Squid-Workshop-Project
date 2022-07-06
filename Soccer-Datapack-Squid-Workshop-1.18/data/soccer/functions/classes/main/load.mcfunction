@@ -34,10 +34,16 @@ scoreboard players set dground2 swSocc_C 3
 scoreboard players set grounddrag1 swSocc_C 10
 scoreboard players set grounddrag2 swSocc_C 9
 
+scoreboard players set grounddrag3 swSocc_C 1000
+scoreboard players set grounddrag4 swSocc_C 546
+
 scoreboard players set airdrag1 swSocc_C 100
 scoreboard players set airdrag2 swSocc_C 99
 
 scoreboard players set airdrag3 swSocc_C 100
 scoreboard players set airdrag4 swSocc_C 98
+
+scoreboard players set airdrag5 swSocc_C 100
+scoreboard players set airdrag6 swSocc_C 91
 
 scoreboard players set gdrag swSocc_C -4900
