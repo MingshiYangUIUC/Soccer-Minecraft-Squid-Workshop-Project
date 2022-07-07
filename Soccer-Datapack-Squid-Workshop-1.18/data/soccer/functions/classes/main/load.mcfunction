@@ -1,7 +1,10 @@
+scoreboard objectives add swSocc_Rclick minecraft.used:minecraft.carrot_on_a_stick
+
 scoreboard objectives add swSocc_C dummy
 scoreboard objectives add swSocc_V dummy
 
 scoreboard objectives add swSocc_time dummy
+scoreboard objectives add swSocc_time_marker dummy
 
 scoreboard objectives add swSocc_vx dummy
 scoreboard objectives add swSocc_vy dummy
@@ -15,6 +18,10 @@ scoreboard objectives add swSocc_wx dummy
 scoreboard objectives add swSocc_wy dummy
 scoreboard objectives add swSocc_wz dummy
 
+scoreboard objectives add swSocc_r0 dummy
+scoreboard objectives add swSocc_r1 dummy
+
+scoreboard objectives add swSocc_power dummy
 
 scoreboard players set C_10000 swSocc_C 10000
 scoreboard players set C_100 swSocc_C 100

@@ -1,0 +1,22 @@
+# Kick mode:
+
+
+# stationary kick: set spin like pool, power right click, line of sight sets direction
+
+
+### 1
+
+power: right click?
+
+direction: line of sight?
+
+vertical spin: side distance from ball?
+
+horizontal spin: ???
+
+### 2
+
+indicator fly towards line of sight, difference of cursor to indicator sets spin?
+
+### 3 forget about spin if not stationary kick
+power and direction

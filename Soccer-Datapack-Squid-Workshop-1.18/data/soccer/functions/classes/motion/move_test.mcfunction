@@ -8,9 +8,14 @@ execute if score @s swSocc_time matches 0 at @s run particle minecraft:crit ~ ~0
 #tellraw @a [{"text":"T "},{"score":{"name":"@s","objective":"swSocc_time"}}, {"text":" vx 1 "},{"score":{"name":"@s","objective":"swSocc_vx"}},{"text":" vx0 "},{"score":{"name":"@s","objective":"swSocc_vx0"}}]
 #tellraw @a [{"text":"vz 0 "},{"score":{"name":"@s","objective":"swSocc_vz"}},{"text":" vz0 "},{"score":{"name":"@s","objective":"swSocc_vz0"}}]
 
-execute store result score @s swSocc_vx0 run data get entity @s Motion[0] 200000
-execute store result score @s swSocc_vy0 run data get entity @s Motion[1] 200000
-execute store result score @s swSocc_vz0 run data get entity @s Motion[2] 200000
+execute store result score @s[scores={swSocc_time=0..}] swSocc_vx0 run data get entity @s Motion[0] 200000
+execute store result score @s[scores={swSocc_time=0..}] swSocc_vy0 run data get entity @s Motion[1] 200000
+execute store result score @s[scores={swSocc_time=0..}] swSocc_vz0 run data get entity @s Motion[2] 200000
+
+# change Marker
+execute if score @s swSocc_vx0 matches 0 if score @s swSocc_vz0 matches 0 if score @s swSocc_vy0 matches -15681 run scoreboard players add @s swSocc_time_marker 1
+execute if score @s swSocc_time_marker matches 10.. run data merge entity @s {Marker:1b}
+execute if score @s swSocc_time_marker matches 10 run tag @s add swSocc_marker
 
 #tellraw @a [{"text":"vx0 "},{"score":{"name":"@s","objective":"swSocc_vx0"}},{"text":" vy0 "},{"score":{"name":"@s","objective":"swSocc_vy0"}},{"text":" vz0 "},{"score":{"name":"@s","objective":"swSocc_vz0"}}]
 #tellraw @a [{"text":"vx "},{"score":{"name":"@s","objective":"swSocc_vx"}},{"text":" vy "},{"score":{"name":"@s","objective":"swSocc_vy"}},{"text":" vz "},{"score":{"name":"@s","objective":"swSocc_vz"}}]
@@ -26,7 +31,7 @@ execute unless score @s swSocc_vz matches 0 store result entity @s Motion[2] dou
 
 
 execute unless score @s swSocc_time matches 0 if score @s swSocc_vx0 matches 0 unless score @s swSocc_vx matches -999..999 run tag @s add swSocc_xbounce
-execute at @s if block ~0.3 ~ ~ air if block ~-0.3 ~ ~ air run tag @s remove swSocc_xbounce
+#execute at @s if block ~0.3 ~ ~ air if block ~-0.3 ~ ~ air run tag @s remove swSocc_xbounce
 scoreboard players operation @s[tag=swSocc_xbounce,tag=!swSocc_xbounce_end] swSocc_vx /= dwall1 swSocc_C
 scoreboard players operation @s[tag=swSocc_xbounce,tag=!swSocc_xbounce_end] swSocc_vx *= dwall2 swSocc_C
 scoreboard players operation @s[tag=swSocc_xbounce,tag=!swSocc_xbounce_end] swSocc_vx *= C_-1 swSocc_C
@@ -35,7 +40,7 @@ tag @s[tag=swSocc_xbounce_end] remove swSocc_xbounce_end
 tag @s[tag=swSocc_xbounce] add swSocc_xbounce_end
 
 execute unless score @s swSocc_time matches 0 if score @s swSocc_vz0 matches 0 unless score @s swSocc_vz matches -999..999 run tag @s add swSocc_zbounce
-execute at @s if block ~ ~ ~0.3 air if block ~ ~ ~-0.3 air run tag @s remove swSocc_zbounce
+#execute at @s if block ~ ~ ~0.3 air if block ~ ~ ~-0.3 air run tag @s remove swSocc_zbounce
 scoreboard players operation @s[tag=swSocc_zbounce,tag=!swSocc_zbounce_end] swSocc_vz /= dwall1 swSocc_C
 scoreboard players operation @s[tag=swSocc_zbounce,tag=!swSocc_zbounce_end] swSocc_vz *= dwall2 swSocc_C
 scoreboard players operation @s[tag=swSocc_zbounce,tag=!swSocc_zbounce_end] swSocc_vz *= C_-1 swSocc_C
