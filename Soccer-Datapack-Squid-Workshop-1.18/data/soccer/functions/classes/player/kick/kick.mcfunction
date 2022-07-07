@@ -1,9 +1,11 @@
-scoreboard players reset @s swSocc_Rclick
+
 
 execute store result score @s swSocc_r0 run data get entity @s Rotation[0] 10000
 execute store result score @s swSocc_r1 run data get entity @s Rotation[1] 10000
 
-
+# dribble
+execute if entity @s[nbt={SelectedItem:{tag:{dribble:1}}}] run scoreboard players set @s swSocc_r1 30000
+execute if entity @s[tag=swSocc_reversed] run scoreboard players add @s swSocc_r0 1800000
 
 # x comp is -sin(r0), z comp is cos(r0)
 scoreboard players operation sinin swSocc_V = @s swSocc_r0
@@ -40,13 +42,25 @@ scoreboard players operation u_vz swSocc_V /= C_10000 swSocc_C
 
 # u_vxyz are unit vectors. multiply with power to get vx,vy,vz
 
+scoreboard players operation P_temp swSocc_V = @s swSocc_power
 
+# dribble
+execute if entity @s[nbt={SelectedItem:{tag:{dribble:1}}}] run scoreboard players set @s swSocc_power 8
 
 scoreboard players operation u_vx swSocc_V *= @s swSocc_power
 scoreboard players operation u_vy swSocc_V *= @s swSocc_power
 scoreboard players operation u_vz swSocc_V *= @s swSocc_power
 
-execute if score u_vy swSocc_V matches ..20000 run scoreboard players set u_vy swSocc_V 20000
+
+# dribble
+execute if entity @s[tag=swSocc_reversed] run scoreboard players operation u_vx swSocc_V /= C_2 swSocc_C
+execute if entity @s[tag=swSocc_reversed] run scoreboard players operation u_vy swSocc_V /= C_2 swSocc_C
+execute if entity @s[tag=swSocc_reversed] run scoreboard players operation u_vz swSocc_V /= C_2 swSocc_C
+
+#tellraw @a [{"text":"power "},{"score":{"name":"@s","objective":"swSocc_power"}}]
+execute if score @s swSocc_power matches 11.. if score u_vy swSocc_V matches ..10000 run scoreboard players set u_vy swSocc_V 10000
+
+scoreboard players operation @s swSocc_power = P_temp swSocc_V
 
 data merge entity @e[tag=swSocc_ball,limit=1,sort=nearest] {Marker:0b}
 

@@ -1,4 +1,4 @@
-execute if score @s swSocc_time matches 0 at @s run particle minecraft:crit ~ ~0.1 ~ 0.2 0.2 0.2 1 100 force
+#execute if score @s swSocc_time matches 0 at @s run particle minecraft:crit ~ ~0.1 ~ 0.2 0.2 0.2 0.5 10 force
 #execute if entity @s[tag=swSocc_xbounce_end] unless score @s swSocc_vx matches -30000..30000 at @s run particle minecraft:crit ~ ~0.1 ~ 0.2 0.2 0.2 0.5 100 force
 #execute if entity @s[tag=swSocc_ybounce_end] unless score @s swSocc_vy matches -30000..30000 at @s run particle minecraft:crit ~ ~0.1 ~ 0.2 0.2 0.2 0.5 100 force
 #execute if entity @s[tag=swSocc_zbounce_end] unless score @s swSocc_vz matches -30000..30000 at @s run particle minecraft:crit ~ ~0.1 ~ 0.2 0.2 0.2 0.5 100 force

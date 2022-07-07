@@ -5,6 +5,7 @@ scoreboard objectives add swSocc_V dummy
 
 scoreboard objectives add swSocc_time dummy
 scoreboard objectives add swSocc_time_marker dummy
+scoreboard objectives add swSocc_time_back dummy
 
 scoreboard objectives add swSocc_vx dummy
 scoreboard objectives add swSocc_vy dummy

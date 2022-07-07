@@ -19,7 +19,7 @@ execute if score PP swSocc_V matches ..5 run scoreboard players set PP swSocc_V 
 execute if score @s swSocc_Rclick matches 1.. run scoreboard players operation @s swSocc_power = PP swSocc_V
 execute if score @s swSocc_Rclick matches 1.. at @s run function soccer:classes/player/power/show
 
-scoreboard players set @s swSocc_Rclick 0
+#scoreboard players set @s swSocc_Rclick 0
 
 #tellraw @a [{"text":"PP "},{"score":{"name":"PP","objective":"swSocc_V"}},{"text":"Pm "},{"score":{"name":"Pm","objective":"swSocc_V"}}]
 #tellraw @a [{"text":"Power "},{"score":{"name":"@s","objective":"swSocc_power"}}]
