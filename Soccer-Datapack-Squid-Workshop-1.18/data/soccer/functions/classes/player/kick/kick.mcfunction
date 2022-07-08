@@ -46,6 +46,7 @@ scoreboard players operation P_temp swSocc_V = @s swSocc_power
 
 # dribble
 execute if entity @s[nbt={SelectedItem:{tag:{dribble:1}}}] run scoreboard players set @s swSocc_power 8
+#execute if entity @s[tag=swSocc_tackle_success,nbt={SelectedItem:{tag:{dribble:1}}}] run scoreboard players set @s swSocc_power 4
 
 scoreboard players operation u_vx swSocc_V *= @s swSocc_power
 scoreboard players operation u_vy swSocc_V *= @s swSocc_power
@@ -66,6 +67,11 @@ data merge entity @e[tag=swSocc_ball,limit=1,sort=nearest] {Marker:0b}
 
 execute as @e[tag=swSocc_ball] run function soccer:classes/motion/reset
 
+# dribble
+execute if entity @s[nbt={SelectedItem:{tag:{dribble:1}}}] run scoreboard players set @e[tag=swSocc_ball] swSocc_time_dribble 10
+execute if entity @s[nbt={SelectedItem:{tag:{kick:1}}}] run scoreboard players set @e[tag=swSocc_ball] swSocc_time_dribble 3
 scoreboard players operation @e[tag=swSocc_ball] swSocc_vx = u_vx swSocc_V
 scoreboard players operation @e[tag=swSocc_ball] swSocc_vy = u_vy swSocc_V
 scoreboard players operation @e[tag=swSocc_ball] swSocc_vz = u_vz swSocc_V
+
+tellraw @a[tag=swSocc_debug] [{"text":"Kicked"}]

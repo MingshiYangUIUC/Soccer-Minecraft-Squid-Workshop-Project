@@ -6,6 +6,7 @@ scoreboard objectives add swSocc_V dummy
 scoreboard objectives add swSocc_time dummy
 scoreboard objectives add swSocc_time_marker dummy
 scoreboard objectives add swSocc_time_back dummy
+scoreboard objectives add swSocc_time_dribble dummy
 
 scoreboard objectives add swSocc_vx dummy
 scoreboard objectives add swSocc_vy dummy
@@ -23,8 +24,15 @@ scoreboard objectives add swSocc_r0 dummy
 scoreboard objectives add swSocc_r1 dummy
 
 scoreboard objectives add swSocc_power dummy
+scoreboard objectives add swSocc_distance dummy
+
+
+scoreboard players set C_314159 swSocc_C 314159
+scoreboard players set C_2718281 swSocc_C 2718281
 
 scoreboard players set C_10000 swSocc_C 10000
+scoreboard players set C_300 swSocc_C 300
+scoreboard players set C_200 swSocc_C 200
 scoreboard players set C_100 swSocc_C 100
 scoreboard players set C_2 swSocc_C 2
 scoreboard players set C_-1 swSocc_C -1

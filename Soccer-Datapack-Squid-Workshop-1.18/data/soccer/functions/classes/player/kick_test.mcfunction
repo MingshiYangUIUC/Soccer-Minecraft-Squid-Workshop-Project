@@ -1,5 +1,9 @@
 # Predefined state of motion
 
+
+data merge entity @e[tag=swSocc_ball,limit=1,sort=nearest] {Marker:0b}
+execute as @e[tag=swSocc_ball] run function soccer:classes/motion/reset
+
 scoreboard players operation @e[tag=swSocc_ball] swSocc_vx = G_vx swSocc_V
 scoreboard players operation @e[tag=swSocc_ball] swSocc_vy = G_vy swSocc_V
 scoreboard players operation @e[tag=swSocc_ball] swSocc_vz = G_vz swSocc_V
