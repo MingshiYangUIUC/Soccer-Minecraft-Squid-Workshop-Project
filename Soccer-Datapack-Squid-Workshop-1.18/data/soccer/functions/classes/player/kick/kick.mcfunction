@@ -65,13 +65,26 @@ scoreboard players operation @s swSocc_power = P_temp swSocc_V
 
 data merge entity @e[tag=swSocc_ball,limit=1,sort=nearest] {Marker:0b}
 
-execute as @e[tag=swSocc_ball] run function soccer:classes/motion/reset
+execute as @e[tag=swSocc_ball,limit=1,sort=nearest] run function soccer:classes/motion/reset
 
 # dribble
 execute if entity @s[nbt={SelectedItem:{tag:{dribble:1}}}] run scoreboard players set @e[tag=swSocc_ball] swSocc_time_dribble 10
 execute if entity @s[nbt={SelectedItem:{tag:{kick:1}}}] run scoreboard players set @e[tag=swSocc_ball] swSocc_time_dribble 3
-scoreboard players operation @e[tag=swSocc_ball] swSocc_vx = u_vx swSocc_V
-scoreboard players operation @e[tag=swSocc_ball] swSocc_vy = u_vy swSocc_V
-scoreboard players operation @e[tag=swSocc_ball] swSocc_vz = u_vz swSocc_V
+scoreboard players operation @e[tag=swSocc_ball,limit=1,sort=nearest] swSocc_vx = u_vx swSocc_V
+scoreboard players operation @e[tag=swSocc_ball,limit=1,sort=nearest] swSocc_vy = u_vy swSocc_V
+scoreboard players operation @e[tag=swSocc_ball,limit=1,sort=nearest] swSocc_vz = u_vz swSocc_V
+
+# set spin
+scoreboard players operation @e[tag=swSocc_ball,limit=1,sort=nearest] swSocc_wx = @s swSocc_wx
+scoreboard players operation @e[tag=swSocc_ball,limit=1,sort=nearest] swSocc_wy = @s swSocc_wy
+scoreboard players operation @e[tag=swSocc_ball,limit=1,sort=nearest] swSocc_wz = @s swSocc_wz
+
+
+
+# reset spin input
+scoreboard players set @s swSocc_wx 0
+scoreboard players set @s swSocc_wy 0
+scoreboard players set @s swSocc_wz 0
+
 
 tellraw @a[tag=swSocc_debug] [{"text":"Kicked"}]
