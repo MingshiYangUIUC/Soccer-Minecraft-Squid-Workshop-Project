@@ -27,6 +27,7 @@ execute at @s run function soccer:classes/motion/magnus
 
 scoreboard players add @s swSocc_time 1
 scoreboard players remove Tguide swSocc_V 1
-execute at @s run particle minecraft:dragon_breath ~ ~0.2 ~ 0. 0. 0. 0 1 force
+#execute at @s run particle minecraft:dragon_breath ~ ~0.2 ~ 0. 0. 0. 0 1 force
+execute at @s run particle minecraft:composter ~ ~0.2 ~ 0. 0. 0. 0 1 force
 execute unless score Tguide swSocc_V matches ..0 run execute at @s run function soccer:classes/motion/move_guide
 execute if score Tguide swSocc_V matches ..0 run execute at @s run kill @s

@@ -65,3 +65,5 @@ scoreboard players set airdrag5 swSocc_C 100
 scoreboard players set airdrag6 swSocc_C 91
 
 scoreboard players set gdrag swSocc_C -4900
+
+

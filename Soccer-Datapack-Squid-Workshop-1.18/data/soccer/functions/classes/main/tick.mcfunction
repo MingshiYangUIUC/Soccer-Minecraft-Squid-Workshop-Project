@@ -18,10 +18,12 @@ tag @a[tag=swSocc_settingspin,scores={swSocc_Rclick=1..}] add swSocc_end_setting
 execute as @a[tag=swSocc_settingspin,scores={swSocc_Rclick=1..}] run function soccer:classes/player/freekick/get_guide
 execute as @a[tag=!swSocc_settingspin,scores={swSocc_Rclick=1..},nbt={SelectedItem:{tag:{spin:1}}}] run function soccer:classes/player/freekick/set_info
 
+execute as @a[scores={swSocc_shift=1..},nbt={OnGround:1b,SelectedItem:{tag:{spin:1}}}] run function soccer:classes/player/set_guide_player
 
 scoreboard players remove @a[scores={swSocc_Rclick=1..}] swSocc_Rclick 1
 scoreboard players remove @a[scores={swSocc_time_back=1..}] swSocc_time_back 1
 scoreboard players remove @e[tag=swSocc_ball,scores={swSocc_time_dribble=1..}] swSocc_time_dribble 1
+scoreboard players remove @a[scores={swSocc_shift=1..}] swSocc_shift 1
 
 tag @a[tag=swSocc_end_settingspin] remove swSocc_settingspin
 tag @a[tag=swSocc_end_settingspin] remove swSocc_end_settingspin
