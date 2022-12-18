@@ -9,6 +9,8 @@ scoreboard players set @s swSocc_vy0 1
 scoreboard players set @s swSocc_vz0 1
 scoreboard players set @s swSocc_time 0
 scoreboard players set @s swSocc_time_marker 0
-tag @s remove swSocc_marker
 
-data merge entity @s {Motion:[0.0d,0.0d,0.0d],NoGravity:0b}
+tag @s add swSocc_marker
+
+data merge entity @s {Motion:[0.0d,0.0d,0.0d],NoGravity:0b,Marker:1b}
+

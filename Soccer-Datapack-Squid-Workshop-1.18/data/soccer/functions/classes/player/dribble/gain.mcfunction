@@ -4,10 +4,15 @@
 
 # @s is the ball!
 
+#say trygain
+
 tag @a add swSocc_tackle
 
 tag @s add swSocc_d2
-execute as @a[tag=swSocc_tackle] at @s run function soccer:classes/player/dribble/get_distance_standing
+#execute as @a[tag=swSocc_tackle] at @s[nbt={FallFlying:0b}] run function soccer:classes/player/dribble/get_distance_standing
+#execute as @a[tag=swSocc_tackle] at @s[nbt={FallFlying:1b}] run function soccer:classes/player/dribble/get_distance_jumping
+execute as @a[tag=swSocc_tackle] at @s[nbt={OnGround:1b}] run function soccer:classes/player/dribble/get_distance_standing
+execute as @a[tag=swSocc_tackle] at @s[nbt={OnGround:0b}] run function soccer:classes/player/dribble/get_distance_jumping
 tag @s remove swSocc_d2
 
 #execute as @a run tellraw @a [{"text":"Dist "},{"score":{"name":"@s","objective":"swSocc_distance"}}]

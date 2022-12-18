@@ -14,7 +14,8 @@ scoreboard players operation Tspin swSocc_V -= Ref swSocc_r1
 scoreboard players operation Sspin swSocc_V /= C_300 swSocc_C
 scoreboard players operation Tspin swSocc_V /= C_300 swSocc_C
 scoreboard players operation Tspin swSocc_V *= C_-1 swSocc_C
-
+execute if score Sspin swSocc_V matches 6001.. run scoreboard players remove Sspin swSocc_V 12000
+execute if score Sspin swSocc_V matches ..-6001 run scoreboard players add Sspin swSocc_V 12000
 
 scoreboard players operation @s swSocc_r0 = Ref swSocc_r0
 scoreboard players operation @s swSocc_r1 = Ref swSocc_r1

@@ -63,8 +63,9 @@ scoreboard players operation dV swSocc_V /= C_10000 swSocc_C
 
 # delta v squared
 scoreboard players operation dV2 swSocc_V = dV swSocc_V
+scoreboard players operation dV2 swSocc_V /= C_100 swSocc_C
 scoreboard players operation dV2 swSocc_V *= dV2 swSocc_V
-scoreboard players operation dV2 swSocc_V /= C_10000 swSocc_C
+#scoreboard players operation dV2 swSocc_V /= C_100 swSocc_C
 
 #tellraw @a [{"text":"fmag dv "},{"score":{"name":"dV","objective":"swSocc_V"}},{"text":" dv2 "},{"score":{"name":"dV2","objective":"swSocc_V"}}]
 
@@ -72,12 +73,15 @@ scoreboard players operation dV2 swSocc_V /= C_10000 swSocc_C
 scoreboard players set Magnus swSocc_C 6000
 
 # get f
+scoreboard players operation Oi swSocc_V /= C_100 swSocc_C
+scoreboard players operation Oj swSocc_V /= C_100 swSocc_C
+scoreboard players operation Ok swSocc_V /= C_100 swSocc_C
 scoreboard players operation Oi swSocc_V *= dV2 swSocc_V
 scoreboard players operation Oj swSocc_V *= dV2 swSocc_V
 scoreboard players operation Ok swSocc_V *= dV2 swSocc_V
-scoreboard players operation Oi swSocc_V /= C_10000 swSocc_C
-scoreboard players operation Oj swSocc_V /= C_10000 swSocc_C
-scoreboard players operation Ok swSocc_V /= C_10000 swSocc_C
+scoreboard players operation Oi swSocc_V /= C_100 swSocc_C
+scoreboard players operation Oj swSocc_V /= C_100 swSocc_C
+scoreboard players operation Ok swSocc_V /= C_100 swSocc_C
 
 scoreboard players operation Oi swSocc_V *= Magnus swSocc_C
 scoreboard players operation Oj swSocc_V *= Magnus swSocc_C

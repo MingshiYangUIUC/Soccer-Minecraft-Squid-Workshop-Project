@@ -1,0 +1,4 @@
+# while the ball is not on ground, pose is determined from omega, which has exponential decay.
+# after the ball touches the ground:
+    # immediately set omega to match rolling speed
+    

@@ -30,8 +30,14 @@ execute unless score @s swSocc_vz matches 0 store result entity @s Motion[2] dou
 #tellraw @a [{"text":"AB vy "},{"score":{"name":"@s","objective":"swSocc_vy"}},{"text":" vy0 "},{"score":{"name":"@s","objective":"swSocc_vy0"}}]
 
 
+# store y for hitbox
+execute store result score y_temp swSocc_V run data get entity @s Pos[1] 10000
+
 execute unless score @s swSocc_time matches 0..1 if score @s swSocc_vx0 matches 0 unless score @s swSocc_vx matches -999..999 run tag @s add swSocc_xbounce
 #execute at @s if block ~0.3 ~ ~ air if block ~-0.3 ~ ~ air run tag @s remove swSocc_xbounce
+execute at @s[tag=swSocc_xbounce] if block ~ ~1 ~ end_rod if block ~ ~ ~ air run tag @s add swSocc_xbounce_end
+execute at @s[tag=swSocc_xbounce_end] run tag @s remove swSocc_xbounce
+execute at @s[tag=swSocc_xbounce_end] if block ~-1 ~ ~ air at @s run tp @s ~-0.1 ~ ~
 scoreboard players operation @s[tag=swSocc_xbounce,tag=!swSocc_xbounce_end] swSocc_vx /= dwall1 swSocc_C
 scoreboard players operation @s[tag=swSocc_xbounce,tag=!swSocc_xbounce_end] swSocc_vx *= dwall2 swSocc_C
 scoreboard players operation @s[tag=swSocc_xbounce,tag=!swSocc_xbounce_end] swSocc_vx *= C_-1 swSocc_C

@@ -38,9 +38,6 @@ execute run scoreboard players operation @s swSocc_vy += gdrag swSocc_C
 
 #tellraw @a [{"text":"0 "},{"score":{"name":"@e[tag=swSocc_ball,limit=1]","objective":"swSocc_vy"}}]
 
-#execute as @e[tag=swSocc_ball] at @s if entity @s[nbt={OnGround:1b}] run scoreboard players set @s[scores={swSocc_vy=-19999..-1}] swSocc_vy 0
-#execute as @e[tag=swSocc_ball] at @s if block ~ ~0.99 ~ air if entity @s[nbt={OnGround:1b},scores={swSocc_vy=..-20000}] run function soccer:classes/motion/bounce_y_test
-
 execute if entity @s[tag=!swSocc_guide,nbt={OnGround:1b}] run function soccer:classes/motion/drag_ground_test
 execute if entity @s[tag=swSocc_guide,scores={swSocc_time=0}] run function soccer:classes/motion/drag_ground_test
 #tellraw @a [{"score":{"name":"@e[tag=swSocc_ball,limit=1]","objective":"swSocc_vy"}}]

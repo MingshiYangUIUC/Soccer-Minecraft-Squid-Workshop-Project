@@ -88,3 +88,5 @@ scoreboard players set @s swSocc_wz 0
 
 
 tellraw @a[tag=swSocc_debug] [{"text":"Kicked"}]
+
+execute at @e[tag=swSocc_ball,limit=1,sort=nearest] run playsound minecraft:block.stone.break ambient @a ~ ~ ~ 1 0.5 0

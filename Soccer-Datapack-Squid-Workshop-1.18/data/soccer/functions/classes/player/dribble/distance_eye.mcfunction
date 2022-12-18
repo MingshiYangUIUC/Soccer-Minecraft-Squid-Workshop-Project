@@ -1,4 +1,4 @@
-#@s is tagged d1, only one d2 at a time
+#@s is without tag, only one d2 at a time
 scoreboard players set Dout swSocc_V 99999999
 
 execute store result score D00 swSocc_V run data get entity @s Pos[0] 10000
@@ -25,5 +25,5 @@ scoreboard players operation SQRTin swSocc_V += D02 swSocc_V
 
 function soccer:classes/math/sqrt
 #execute unless entity @e[type=armor_stand,tag=swSocc_d2,distance=..3,limit=1] run scoreboard players set @s swSocc_dist 99999999
-scoreboard players operation Dout swSocc_V = SQRTout swSocc_V
+execute if entity @e[type=armor_stand,tag=swSocc_d2,distance=..3,limit=1] run scoreboard players operation Dout swSocc_V = SQRTout swSocc_V
 

@@ -1,1 +1,0 @@
-summon minecraft:armor_stand ~ ~ ~ {Tags:["swSocc_ball"],ArmorItems:[{},{},{},{id:"minecraft:acacia_button",Count:1b,tag:{CustomModelData:3}}],Small:1,Invisible:1,Pose:{Head:[180.0f,0.0f,0.0f]},CustomName:'"Ball"',CustomNameVisible:0}

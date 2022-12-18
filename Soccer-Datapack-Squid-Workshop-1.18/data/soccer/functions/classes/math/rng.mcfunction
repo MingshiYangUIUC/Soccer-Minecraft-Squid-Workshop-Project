@@ -12,7 +12,7 @@ scoreboard players operation RNG swSocc_V *= C_2718281 swSocc_C
 
 
 scoreboard players operation RNG swSocc_V *= RNG swSocc_V
-scoreboard players operation RNG swSocc_V /= C_100 swSocc_C
+scoreboard players operation RNG swSocc_V /= C_1000 swSocc_C
 
 scoreboard players operation RNG swSocc_V *= C_314159 swSocc_C
 scoreboard players operation RNG swSocc_V *= C_2718281 swSocc_C
