@@ -4,6 +4,8 @@ execute as @a if entity @s[nbt={SelectedItem:{tag:{spin:1}}}] at @s if entity @e
 
 execute as @e[tag=swSocc_ball,tag=!swSocc_marker] at @s run function soccer:classes/motion/move_test
 
+execute as @e[tag=swSocc_ball,tag=!swSocc_marker] at @s run function soccer:classes/pose/w2dpdt_iterative
+
 scoreboard players set Detect swSocc_V 0
 execute as @a at @s positioned ~ ~0 ~ as @e[tag=swSocc_ball,distance=..3] run scoreboard players set Detect swSocc_V 1
 execute as @a at @s positioned ~ ~1 ~ if entity @e[tag=swSocc_ball,distance=..3] run scoreboard players set Detect swSocc_V 1
@@ -32,3 +34,7 @@ scoreboard players remove @a[scores={swSocc_shift=1..}] swSocc_shift 1
 
 tag @a[tag=swSocc_end_settingspin] remove swSocc_settingspin
 tag @a[tag=swSocc_end_settingspin] remove swSocc_end_settingspin
+
+#execute as @e[tag=swSocc_ball_pivot] at @s run data modify entity @s Pos set from entity @e[tag=swSocc_ball,limit=1,sort=nearest] Pos
+
+execute as @e[tag=swSocc_ball] at @s run tp @e[tag=swSocc_ball_pivot,limit=1,sort=nearest] ~ ~-0.48 ~

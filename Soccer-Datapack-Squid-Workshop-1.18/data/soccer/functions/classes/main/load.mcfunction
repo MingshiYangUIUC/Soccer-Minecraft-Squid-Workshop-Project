@@ -28,6 +28,7 @@ scoreboard objectives add swSocc_distance dummy
 
 scoreboard objectives add swSocc_walls dummy
 
+scoreboard objectives add swSocc_pose dummy
 
 scoreboard players set C_314159 swSocc_C 314159
 scoreboard players set C_2718281 swSocc_C 2718281
@@ -37,11 +38,14 @@ scoreboard players set C_1000 swSocc_C 1000
 scoreboard players set C_300 swSocc_C 300
 scoreboard players set C_200 swSocc_C 200
 scoreboard players set C_100 swSocc_C 100
+scoreboard players set C_20 swSocc_C 20
 scoreboard players set C_10 swSocc_C 10
 scoreboard players set C_5 swSocc_C 5
 scoreboard players set C_2 swSocc_C 2
 scoreboard players set C_-1 swSocc_C -1
 scoreboard players set C_-10000 swSocc_C -10000
+
+scoreboard players set C_r swSocc_C 2500
 
 scoreboard players set SQRT3 swSocc_C 2
 

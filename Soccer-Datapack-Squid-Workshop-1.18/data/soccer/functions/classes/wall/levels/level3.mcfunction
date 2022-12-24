@@ -22,5 +22,5 @@ execute positioned -176 -60 55 run fill ~ ~ ~ ~ ~1 ~ red_stained_glass
 execute positioned -179 -60 42 run fill ~ ~ ~ ~ ~1 ~ red_stained_glass
 execute positioned -180 -60 41 run fill ~ ~ ~ ~ ~1 ~ red_stained_glass
 
-execute as @e[type=armor_stand] at @s run tp @s ~ ~ ~ facing entity @p
+#execute as @e[type=armor_stand] at @s run tp @s ~ ~ ~ facing entity @p
 #goalkeeper: stand at right side, not much reaction

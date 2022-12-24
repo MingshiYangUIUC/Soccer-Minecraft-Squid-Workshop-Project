@@ -13,5 +13,5 @@ execute positioned -191 -60 63 run fill ~ ~ ~ ~ ~1 ~ white_stained_glass
 execute positioned -191 -60 64 run fill ~ ~ ~ ~ ~1 ~ white_stained_glass
 execute positioned -190 -60 61 run fill ~ ~ ~ ~ ~1 ~ white_stained_glass
 
-execute as @e[type=armor_stand] at @s run tp @s ~ ~ ~ facing entity @p
+#execute as @e[type=armor_stand] at @s run tp @s ~ ~ ~ facing entity @p
 #goalkeeper: reacted but stopped
