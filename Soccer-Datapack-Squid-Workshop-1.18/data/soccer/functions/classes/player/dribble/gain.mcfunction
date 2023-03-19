@@ -4,7 +4,7 @@
 
 # @s is the ball!
 
-say trygain
+#say trygain
 
 tag @a[scores={swSocc_player_detect=1}] add swSocc_tackle
 
@@ -15,7 +15,7 @@ execute as @a[tag=swSocc_tackle] at @s[nbt={OnGround:1b}] run function soccer:cl
 execute as @a[tag=swSocc_tackle] at @s[nbt={OnGround:0b}] run function soccer:classes/player/dribble/get_distance_jumping
 tag @s remove swSocc_d2
 
-execute as @a[tag=swSocc_tackle] run tellraw @a [{"selector":"@s"},{"text":"Dist "},{"score":{"name":"@s","objective":"swSocc_distance"}}]
+#execute as @a[tag=swSocc_tackle] run tellraw @a [{"selector":"@s"},{"text":"Dist "},{"score":{"name":"@s","objective":"swSocc_distance"}}]
 
 scoreboard players set Dmin swSocc_V 999999
 
