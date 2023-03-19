@@ -30,6 +30,8 @@ scoreboard objectives add swSocc_walls dummy
 
 scoreboard objectives add swSocc_pose dummy
 
+scoreboard objectives add swSocc_player_detect dummy
+
 scoreboard players set C_314159 swSocc_C 314159
 scoreboard players set C_2718281 swSocc_C 2718281
 
