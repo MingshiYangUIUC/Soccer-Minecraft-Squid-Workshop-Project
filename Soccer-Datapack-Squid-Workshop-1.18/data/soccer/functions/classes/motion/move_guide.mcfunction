@@ -8,11 +8,12 @@ execute unless score @s swSocc_time matches ..1 run scoreboard players operation
 execute unless score @s swSocc_time matches ..1 run scoreboard players operation @s swSocc_vx0 /= airdrag5 swSocc_C
 execute unless score @s swSocc_time matches ..1 run scoreboard players operation @s swSocc_vz0 *= airdrag6 swSocc_C
 execute unless score @s swSocc_time matches ..1 run scoreboard players operation @s swSocc_vz0 /= airdrag5 swSocc_C
+
 execute if score @s swSocc_time matches ..1 run scoreboard players operation @s swSocc_vx0 /= grounddrag3 swSocc_C
 execute if score @s swSocc_time matches ..1 run scoreboard players operation @s swSocc_vx0 *= grounddrag4 swSocc_C
 execute if score @s swSocc_time matches ..1 run scoreboard players operation @s swSocc_vz0 /= grounddrag3 swSocc_C
 execute if score @s swSocc_time matches ..1 run scoreboard players operation @s swSocc_vz0 *= grounddrag4 swSocc_C
-
+#tellraw @a [{"text":"  vx0 "},{"score":{"name":"@s","objective":"swSocc_vx0"}}]
 scoreboard players operation @s swSocc_vy0 *= airdrag4 swSocc_C
 scoreboard players operation @s swSocc_vy0 /= airdrag3 swSocc_C
 scoreboard players remove @s swSocc_vy0 15681
@@ -23,7 +24,9 @@ execute unless score @s swSocc_vy matches 0 store result entity @s Motion[1] dou
 execute unless score @s swSocc_vz matches 0 store result entity @s Motion[2] double 0.000005 run scoreboard players get @s swSocc_vz
 
 execute at @s run function soccer:classes/motion/drag_test
+#execute if score @s swSocc_time matches ..10 run function soccer:classes/motion/sync
 execute at @s run function soccer:classes/motion/magnus
+
 
 scoreboard players add @s swSocc_time 1
 scoreboard players remove Tguide swSocc_V 1

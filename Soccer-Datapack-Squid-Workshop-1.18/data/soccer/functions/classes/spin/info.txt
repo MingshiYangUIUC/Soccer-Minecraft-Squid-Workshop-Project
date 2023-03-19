@@ -1,6 +1,0 @@
-
-force axis = spin axis X motion axis
-
-delta V is about spin magnitude * radius
-
-force magnitude proportional to delta V squared

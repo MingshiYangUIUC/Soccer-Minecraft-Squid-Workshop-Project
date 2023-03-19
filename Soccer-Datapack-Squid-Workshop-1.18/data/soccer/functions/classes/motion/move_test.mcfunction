@@ -63,7 +63,7 @@ scoreboard players operation @s[tag=swSocc_ybounce,tag=!swSocc_ybounce_end] swSo
 tag @s[tag=swSocc_ybounce_end] remove swSocc_ybounce
 tag @s[tag=swSocc_ybounce_end] remove swSocc_ybounce_end
 tag @s[tag=swSocc_ybounce] add swSocc_ybounce_end
-execute if entity @s[tag=swSocc_ybounce] run function soccer:classes/spin/vtow_new
+
 scoreboard players set @s[tag=swSocc_ybounce,scores={swSocc_vy=-20000..20000}] swSocc_vy 0
 
 #tellraw @a [{"text":"AB vy "},{"score":{"name":"@s","objective":"swSocc_vy"}},{"text":" vy0 "},{"score":{"name":"@s","objective":"swSocc_vy0"}}]

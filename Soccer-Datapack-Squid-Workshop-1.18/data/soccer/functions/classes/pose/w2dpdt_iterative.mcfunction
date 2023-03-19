@@ -55,7 +55,7 @@ scoreboard players operation cosp2 swMath_V = #vOut swMath_V
 # calculate the common divider = cosp1
 scoreboard players operation CD swMath_V = cosp1 swMath_V
 scoreboard players operation CDabs swMath_V = CD swMath_V
-execute if score CDabs swMath_V matches ..-1 run scoreboard players operation CDabs swMath_V *= C_-1 swMath_C
+execute if score CDabs swMath_V matches ..-1 run scoreboard players operation CDabs swMath_V *= #C_-1 swMath_C
 
 #tellraw @a [{"text":" pose0 "},{"score":{"objective":"swSocc_pose","name": "pose0"}},{"text":" pose1 "},{"score":{"objective":"swSocc_pose","name": "pose1"}},{"text":" pose2 "},{"score":{"objective":"swSocc_pose","name": "pose2"}}]
 #tellraw @a [{"text":"CD "},{"score":{"objective":"swMath_V","name": "CD"}}]
@@ -86,7 +86,7 @@ scoreboard players operation dp1 swMath_V /= CDabs swMath_V
 # calculate dp2 = dp0 * sin(p1) + wc
 scoreboard players operation dp2 swMath_V = dp0 swMath_V
 scoreboard players operation dp2 swMath_V *= sinp1 swMath_V
-scoreboard players operation dp2 swMath_V /= C_10000 swMath_C
+scoreboard players operation dp2 swMath_V /= #C_10000 swMath_C
 scoreboard players operation dp2 swMath_V += wc swMath_V
 
 #tellraw @a [{"text":"dp0 "},{"score":{"objective":"swMath_V","name": "dp0"}},{"text":" dp1 "},{"score":{"objective":"swMath_V","name": "dp1"}},{"text":" dp2 "},{"score":{"objective":"swMath_V","name": "dp2"}}]
@@ -156,7 +156,7 @@ scoreboard players operation pose2 swSocc_pose += dp2 swMath_V
 scoreboard players operation DT swMath_V -= dt swMath_V
 
 # iterate again if DT is not zero
-execute if score DT swMath_V matches 1.. run function pool:classes/pose/w2dpdt_loop
+#execute if score DT swMath_V matches 1.. run function soccer:classes/pose/w2dpdt_loop
 
 ############# iteration ends
 

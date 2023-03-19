@@ -19,11 +19,11 @@ scoreboard players operation D00 swSocc_V *= D00 swSocc_V
 scoreboard players operation D01 swSocc_V *= D01 swSocc_V
 scoreboard players operation D02 swSocc_V *= D02 swSocc_V
 
-scoreboard players operation SQRTin swSocc_V = D00 swSocc_V
-scoreboard players operation SQRTin swSocc_V += D01 swSocc_V
-scoreboard players operation SQRTin swSocc_V += D02 swSocc_V
+scoreboard players operation #vIn swMath_V = D00 swSocc_V
+scoreboard players operation #vIn swMath_V += D01 swSocc_V
+scoreboard players operation #vIn swMath_V += D02 swSocc_V
 
-function soccer:classes/math/sqrt
+function math:classes/core/operations/sqrt
 #execute unless entity @e[type=armor_stand,tag=swSocc_d2,distance=..3,limit=1] run scoreboard players set @s swSocc_dist 99999999
-scoreboard players operation Dout swSocc_V = SQRTout swSocc_V
+scoreboard players operation Dout swSocc_V = #vOut swMath_V
 

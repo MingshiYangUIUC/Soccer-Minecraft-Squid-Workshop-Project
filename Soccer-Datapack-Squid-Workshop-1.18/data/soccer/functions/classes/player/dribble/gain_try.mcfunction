@@ -11,7 +11,8 @@ execute if score Chance swSocc_V matches 81.. run scoreboard players set Chance 
 
 
 # RNG 
-function soccer:classes/math/rng
+function math:classes/core/random/randint_base
+scoreboard players operation RNG swSocc_V = #vOut swMath_V
 scoreboard players operation RNG swSocc_V %= C_100 swSocc_C
 tellraw @a[tag=swSocc_debug] [{"text":"Chance "},{"score":{"name":"Chance","objective":"swSocc_V"}},{"text":"% RNG "},{"score":{"name":"RNG","objective":"swSocc_V"}}]
 

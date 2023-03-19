@@ -147,4 +147,4 @@ scoreboard players operation DT swMath_V -= dt swMath_V
 #tellraw @a [{"text":"pose1 1 "},{"score":{"objective":"swSocc_pose","name": "pose1"}}]
 #tellraw @a [{"text":"DT   "},{"score":{"objective":"swMath_V","name": "DT"}}]
 # iterate again if DT is not zero
-execute if score DT swMath_V matches 1.. run function pool:classes/pose/w2dpdt_loop
+execute if score DT swMath_V matches 1.. run function soccer:classes/pose/w2dpdt_loop
