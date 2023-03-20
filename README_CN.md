@@ -20,6 +20,8 @@
 - Step 09 输入“/reload”命令，然后按Enter键。
 - Step 10 开始玩吧。
 
+Windows用户快速安装数学数据包：将此[下载器](https://github.com/MingshiYangUIUC/Math-Minecraft-Squid-Workshop-Project/blob/main/swMath_sync.bat)放在您的数据包目录中并双击运行。
+
 # 使用
 重新加载时，可能会提示您选择语言。您只需要单击<<ins>此格式</ins>>的文本。
 

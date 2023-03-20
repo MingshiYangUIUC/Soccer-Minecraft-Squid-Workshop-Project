@@ -22,6 +22,8 @@ Compatible with Minecraft Java Edition 1.18+ (not tested with 1.17, but likely c
 - Step 09 Type "/reload" command then press enter.
 - Step 10 Enjoy 
 
+Express Math Datapack installation for Windows users: save and run this [installer](https://github.com/MingshiYangUIUC/Math-Minecraft-Squid-Workshop-Project/blob/main/swMath_sync.bat) in your datapack directory.
+
 # Usage
 When you reload, you may be prompted to select language. You just need to click on texts in <<ins>this format</ins>>.
 
