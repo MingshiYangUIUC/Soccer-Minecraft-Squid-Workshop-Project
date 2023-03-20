@@ -2,7 +2,7 @@
 
 *This datapack's functionality requires [Math Datapack](https://github.com/MingshiYangUIUC/Math-Minecraft-Squid-Workshop-Project). Please include its latest version in your datapack directory.*
 
-[中文版使用说明](https://github.com/MingshiYangUIUC/Soccer-Minecraft-Squid-Workshop-Project/blob/migration/README_CN.md)
+[中文版使用说明](https://github.com/MingshiYangUIUC/Soccer-Minecraft-Squid-Workshop-Project/blob/main/README_CN.md)
 
 # Introduction
 This datapack is a soccer simulator with a ball and custom kicking mechanism.\
