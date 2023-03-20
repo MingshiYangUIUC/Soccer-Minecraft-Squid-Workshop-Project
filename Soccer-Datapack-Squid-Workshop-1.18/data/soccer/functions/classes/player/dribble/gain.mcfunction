@@ -25,7 +25,7 @@ execute as @a[tag=swSocc_tackle] if score @s swSocc_distance = Dmin swSocc_V run
 
 #tellraw @a [{"text":"D min  "},{"score":{"name":"Dmin","objective":"swSocc_V"}}]
 
-execute as @a[tag=swSocc_tackle_try] run function soccer:classes/player/dribble/gain_try
+execute as @a[tag=swSocc_tackle_try,sort=random] run function soccer:classes/player/dribble/gain_try
 
 #tellraw @a [{"text":"Try tackle"}]
 execute if entity @a[tag=swSocc_tackle_success] run tellraw @a[tag=swSocc_debug] [{"text":"Possessed by "},{"selector":"@a[tag=swSocc_tackle_success]"}]

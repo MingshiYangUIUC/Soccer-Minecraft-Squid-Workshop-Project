@@ -41,3 +41,5 @@ tag @a[tag=swSocc_end_settingspin] remove swSocc_end_settingspin
 #execute as @e[tag=swSocc_ball_pivot] at @s run data modify entity @s Pos set from entity @e[tag=swSocc_ball,limit=1,sort=nearest] Pos
 
 execute as @e[tag=swSocc_ball] at @s run tp @e[tag=swSocc_ball_pivot,limit=1,sort=nearest] ~ ~-0.48 ~
+
+execute if entity @a[tag=swSocc_tutorial] run function soccer:classes/tutorial_singleplayer/run
