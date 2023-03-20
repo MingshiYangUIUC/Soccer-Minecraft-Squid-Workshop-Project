@@ -1,3 +1,5 @@
+function soccer:classes/main/clear
+
 scoreboard objectives add swSocc_Rclick minecraft.used:minecraft.carrot_on_a_stick
 
 scoreboard objectives add swSocc_C dummy
@@ -77,3 +79,5 @@ scoreboard players set gdrag swSocc_C -4900
 
 
 execute as @a[tag=!swSocc_EN,tag=!swSocc_CN] run function app:soccer/settings/language
+
+execute as @a unless score @s swSocc_power matches 0..100 run scoreboard players set @s swSocc_power 50
