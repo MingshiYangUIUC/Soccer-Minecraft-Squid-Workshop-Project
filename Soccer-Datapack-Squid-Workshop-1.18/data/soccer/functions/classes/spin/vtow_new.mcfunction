@@ -1,8 +1,10 @@
 #w = (n X v)/r
 
-# unit of ve: same as v: 10000 -> 1m/tick
-# 1m/s = 8 rad/s = 0.4 rad/tick
+# unit of vxvyvz: 1m/s
+# 1m/s = 4 rad/s = 0.2 rad/tick as 0.05 m/tick / (0.25m/rad)
 # unit of w: m/s / r -> rad/tick
+
+# 0.2 = 4 / 20 = 500 / 2500
 
 scoreboard players set #vAi swMath_V 0
 scoreboard players set #vAj swMath_V 500

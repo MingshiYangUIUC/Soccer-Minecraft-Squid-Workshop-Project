@@ -6,7 +6,7 @@
 
 #say trygain
 
-tag @a add swSocc_tackle
+tag @a[scores={swSocc_player_detect=1}] add swSocc_tackle
 
 tag @s add swSocc_d2
 #execute as @a[tag=swSocc_tackle] at @s[nbt={FallFlying:0b}] run function soccer:classes/player/dribble/get_distance_standing
@@ -15,7 +15,7 @@ execute as @a[tag=swSocc_tackle] at @s[nbt={OnGround:1b}] run function soccer:cl
 execute as @a[tag=swSocc_tackle] at @s[nbt={OnGround:0b}] run function soccer:classes/player/dribble/get_distance_jumping
 tag @s remove swSocc_d2
 
-#execute as @a run tellraw @a [{"text":"Dist "},{"score":{"name":"@s","objective":"swSocc_distance"}}]
+#execute as @a[tag=swSocc_tackle] run tellraw @a [{"selector":"@s"},{"text":"Dist "},{"score":{"name":"@s","objective":"swSocc_distance"}}]
 
 scoreboard players set Dmin swSocc_V 999999
 
@@ -25,7 +25,7 @@ execute as @a[tag=swSocc_tackle] if score @s swSocc_distance = Dmin swSocc_V run
 
 #tellraw @a [{"text":"D min  "},{"score":{"name":"Dmin","objective":"swSocc_V"}}]
 
-execute as @a[tag=swSocc_tackle_try] run function soccer:classes/player/dribble/gain_try
+execute as @a[tag=swSocc_tackle_try,sort=random] run function soccer:classes/player/dribble/gain_try
 
 #tellraw @a [{"text":"Try tackle"}]
 execute if entity @a[tag=swSocc_tackle_success] run tellraw @a[tag=swSocc_debug] [{"text":"Possessed by "},{"selector":"@a[tag=swSocc_tackle_success]"}]

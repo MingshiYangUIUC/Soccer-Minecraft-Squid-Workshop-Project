@@ -6,9 +6,12 @@ execute as @e[tag=swSocc_ball,tag=!swSocc_marker] at @s run function soccer:clas
 
 execute as @e[tag=swSocc_ball,tag=!swSocc_marker] at @s run function soccer:classes/pose/w2dpdt_iterative
 
+scoreboard players set @a swSocc_player_detect 0
+
+execute as @a at @s positioned ~ ~0 ~ as @e[tag=swSocc_ball,distance=..3] run scoreboard players set @s swSocc_player_detect 1
+execute as @a at @s positioned ~ ~1 ~ if entity @e[tag=swSocc_ball,distance=..3] run scoreboard players set @s swSocc_player_detect 1
 scoreboard players set Detect swSocc_V 0
-execute as @a at @s positioned ~ ~0 ~ as @e[tag=swSocc_ball,distance=..3] run scoreboard players set Detect swSocc_V 1
-execute as @a at @s positioned ~ ~1 ~ if entity @e[tag=swSocc_ball,distance=..3] run scoreboard players set Detect swSocc_V 1
+execute as @a if score @s swSocc_player_detect matches 1 run scoreboard players set Detect swSocc_V 1
 execute if score Detect swSocc_V matches 1 as @e[tag=swSocc_ball] if score @s swSocc_time_dribble matches 0 at @s if entity @a[nbt={SelectedItem:{tag:{dribble:1,tackle:0}}}] run function soccer:classes/player/dribble/gain
 
 #execute as @e[tag=swSocc_ball] if score @s swSocc_time_dribble matches 0 at @s if entity @a[nbt={SelectedItem:{tag:{dribble:1,tackle:0}}},distance=..3] run function soccer:classes/player/dribble/gain
@@ -38,3 +41,5 @@ tag @a[tag=swSocc_end_settingspin] remove swSocc_end_settingspin
 #execute as @e[tag=swSocc_ball_pivot] at @s run data modify entity @s Pos set from entity @e[tag=swSocc_ball,limit=1,sort=nearest] Pos
 
 execute as @e[tag=swSocc_ball] at @s run tp @e[tag=swSocc_ball_pivot,limit=1,sort=nearest] ~ ~-0.48 ~
+
+execute if entity @a[tag=swSocc_tutorial] run function soccer:classes/tutorial_singleplayer/run

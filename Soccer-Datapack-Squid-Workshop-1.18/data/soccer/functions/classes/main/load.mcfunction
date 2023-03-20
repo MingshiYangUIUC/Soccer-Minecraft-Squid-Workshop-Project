@@ -30,6 +30,8 @@ scoreboard objectives add swSocc_walls dummy
 
 scoreboard objectives add swSocc_pose dummy
 
+scoreboard objectives add swSocc_player_detect dummy
+
 scoreboard players set C_314159 swSocc_C 314159
 scoreboard players set C_2718281 swSocc_C 2718281
 
@@ -74,3 +76,4 @@ scoreboard players set airdrag6 swSocc_C 91
 scoreboard players set gdrag swSocc_C -4900
 
 
+execute as @a[tag=!swSocc_EN,tag=!swSocc_CN] run function app:soccer/settings/language
