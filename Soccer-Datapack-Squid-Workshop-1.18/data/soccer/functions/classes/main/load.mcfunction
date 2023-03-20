@@ -76,3 +76,4 @@ scoreboard players set airdrag6 swSocc_C 91
 scoreboard players set gdrag swSocc_C -4900
 
 
+execute as @a[tag=!swSocc_EN,tag=!swSocc_CN] run function app:soccer/settings/language

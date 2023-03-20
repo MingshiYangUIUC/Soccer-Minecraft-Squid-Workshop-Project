@@ -1,7 +1,7 @@
-tellraw @s [{"text":"    "},{"text":"Good Job!"}]
-
-tellraw @s [{"text":"----"},{"text":"Challenge 2: Please bring the ball to the opposite side of the room."}]
-
+tellraw @s[tag=swSocc_EN] [{"text":"    "},{"text":"Good Job!"}]
+tellraw @s[tag=swSocc_CN] [{"text":"    "},{"text":"成功！"}]
+tellraw @s[tag=swSocc_EN] [{"text":"----"},{"text":"Challenge 2: Please bring the ball to the opposite side of the room."}]
+tellraw @s[tag=swSocc_CN] [{"text":"----"},{"text":"第二关，请将球移动到房间对面的紫色标记处。"}]
 tag @a remove swSocc_tutorial_0
 tag @s add swSocc_tutorial_1
 

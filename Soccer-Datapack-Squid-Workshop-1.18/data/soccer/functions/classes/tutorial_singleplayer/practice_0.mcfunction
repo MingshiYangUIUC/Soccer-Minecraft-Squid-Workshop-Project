@@ -1,6 +1,6 @@
 # practice session
-tellraw @s [{"text":"----"},{"text":"Challenge 1: Please bring the ball to the opposite side of the room."}]
-
+tellraw @s[tag=swSocc_EN] [{"text":"----"},{"text":"Challenge 1: Please bring the ball to the opposite side of the room (purple column)."}]
+tellraw @s[tag=swSocc_CN] [{"text":"----"},{"text":"第一关，请将球移动到房间对面的紫色标记处。"}]
 # set up a scenario
 
 tag @s add swSocc_tutorial_0
